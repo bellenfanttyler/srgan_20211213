@@ -200,5 +200,5 @@ def random_rotate(lr_img, hr_img):
 def download_archive(file, target_dir, url, extract=True):
     source_url = url
     target_dir = os.path.abspath(target_dir)
-    tf.keras.utils.get_file(fname=None, source_url, cache_subdir=target_dir, extract=extract)
+    tf.keras.utils.get_file(None, source_url, cache_subdir=target_dir, extract=extract)
     os.remove(os.path.join(target_dir, file))
