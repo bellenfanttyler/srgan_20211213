@@ -18,7 +18,7 @@ class DIV2K:
 
         self.train_lr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_LR_bicubic_X4.zip"
         self.valid_lr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_LR_bicubic_X4.zip"
-        self.train_hr_url = "https://drive.google.com/file/d/1cl9BWswS5UhlOz4YNAs3ZPjP8j_8modf/view?usp=sharing"
+        self.train_hr_url = "https://drive.google.com/u/0/uc?export=download&confirm=OGQ1&id=1cl9BWswS5UhlOz4YNAs3ZPjP8j_8modf"
         self.valid_hr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_HR.zip"
 
         if scale in _scales:
