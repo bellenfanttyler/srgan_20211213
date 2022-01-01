@@ -16,10 +16,10 @@ class DIV2K:
 
         _scales = [2, 3, 4, 8]
 
-        train_lr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_LR_bicubic_X4.zip"
-        valid_lr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_LR_bicubic_X4.zip"
-        train_hr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip"
-        valid_hr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_HR.zip"
+        self.train_lr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_LR_bicubic_X4.zip"
+        self.valid_lr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_LR_bicubic_X4.zip"
+        self.train_hr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip"
+        self.valid_hr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_HR.zip"
 
         if scale in _scales:
             self.scale = scale
@@ -74,9 +74,9 @@ class DIV2K:
     def hr_dataset(self):
         if not os.path.exists(self._hr_images_dir()):
             if 'train' in self._hr_images_dir():
-                download_archive(self._hr_images_archive(), self.images_dir, train_hr_url, extract=True)
+                download_archive(self._hr_images_archive(), self.images_dir, self.train_hr_url, extract=True)
             else:
-                download_archive(self._hr_images_archive(), self.images_dir, valid_hr_url, extract=True)
+                download_archive(self._hr_images_archive(), self.images_dir, self.valid_hr_url, extract=True)
 
         ds = self._images_dataset(self._hr_image_files()).cache(self._hr_cache_file())
 
@@ -88,9 +88,9 @@ class DIV2K:
     def lr_dataset(self):
         if not os.path.exists(self._lr_images_dir()):
             if 'train' in self._lr_images_dir():
-                download_archive(self._hr_images_archive(), self.images_dir, train_lr_url, extract=True)
+                download_archive(self._hr_images_archive(), self.images_dir, self.train_lr_url, extract=True)
             else:
-                download_archive(self._hr_images_archive(), self.images_dir, valid_lr_url, extract=True)
+                download_archive(self._hr_images_archive(), self.images_dir, self.valid_lr_url, extract=True)
 
 
         ds = self._images_dataset(self._lr_image_files()).cache(self._lr_cache_file())
