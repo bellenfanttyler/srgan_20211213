@@ -73,7 +73,7 @@ class DIV2K:
 
     def hr_dataset(self):
         if not os.path.exists(self._hr_images_dir()):
-            if 'train' in self._hr_images_dir:
+            if 'train' in self._hr_images_dir():
                 download_archive(self._hr_images_archive(), self.images_dir, train_hr_url, extract=True)
             else:
                 download_archive(self._hr_images_archive(), self.images_dir, valid_hr_url, extract=True)
@@ -87,7 +87,7 @@ class DIV2K:
 
     def lr_dataset(self):
         if not os.path.exists(self._lr_images_dir()):
-            if 'train' in self._hr_images_dir:
+            if 'train' in self._lr_images_dir():
                 download_archive(self._hr_images_archive(), self.images_dir, train_lr_url, extract=True)
             else:
                 download_archive(self._hr_images_archive(), self.images_dir, valid_lr_url, extract=True)
