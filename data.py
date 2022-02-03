@@ -27,9 +27,9 @@ class DIV2K:
             raise ValueError(f'scale must be in ${_scales}')
 
         if subset == 'train':
-            self.image_ids = range(1, 801)
+            self.image_ids = range(1, 8801)
         elif subset == 'valid':
-            self.image_ids = range(801, 901)
+            self.image_ids = range(8801, 9902)
         else:
             raise ValueError("subset must be 'train' or 'valid'")
 
