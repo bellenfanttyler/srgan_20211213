@@ -16,10 +16,10 @@ class DIV2K:
 
         _scales = [2, 3, 4, 8]
 
-        self.train_lr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_LR_bicubic_X4.zip"
-        self.valid_lr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_LR_bicubic_X4.zip"
-        self.train_hr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip"
-        self.valid_hr_url = "http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_HR.zip"
+        self.train_lr_url = "https://storage.googleapis.com/image_download_test/DIV2K_train_LR_bicubic.zip"
+        self.valid_lr_url = "https://storage.googleapis.com/image_download_test/DIV2K_valid_LR_bicubic.zip"
+        self.train_hr_url = "https://storage.googleapis.com/image_download_test/DIV2K_train_HR.zip"
+        self.valid_hr_url = "https://storage.googleapis.com/image_download_test/DIV2K_valid_HR.zip"
 
         if scale in _scales:
             self.scale = scale
