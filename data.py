@@ -203,5 +203,5 @@ def download_archive(file, target_dir, url, extract=True):
     tf.keras.utils.get_file(None, source_url, cache_subdir=target_dir, extract=extract)
     try:
         os.remove(os.path.join(target_dir, file))
-    except Exception, e: print e
+    except Exception as e: print(e)
        
