@@ -9,7 +9,7 @@ from train import SrganTrainer, SrganGeneratorTrainer
 
 # Parsing the command line inputs
 parser = argparse.ArgumentParser(description='Trains an SRGAN model')
-parser.add_argument('-s','--steps', help='Number of Training Steps (Multiple of 10,000', required=True)
+parser.add_argument('-s','--steps', help='Number of Training Steps (Multiple of 10,000)', required=True)
 parser.add_argument('-w','--weights', nargs="?", const="pre_generator.h5", help='Weights file to start with')
 args = vars(parser.parse_args())
 
