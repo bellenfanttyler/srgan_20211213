@@ -9,12 +9,12 @@ from train import SrganTrainer, SrganGeneratorTrainer
 
 # Parsing the command line inputs
 parser = argparse.ArgumentParser(description='Trains an SRGAN model')
-parser.add_argument('-s','--steps', help='Number of Training Steps (Multiple of 10,000)', required=True)
-parser.add_argument('-w','--weights', nargs="?", const="pre_generator.h5", help='Weights file to start with')
+parser.add_argument('-s','--steps', help='Number of Training Steps (Multiple of 10,000', required=True)
+parser.add_argument('-w','--weights', help='Weights file to start with (.h5 file) from the weights/srgan directory', required=True)
 args = vars(parser.parse_args())
 
 base_steps = 10000
-total_steps = int(args['steps'])
+total_steps = args['steps']
 iteration_count = int(total_steps / base_steps)
 
 # Location of model weights (needed for demo)
@@ -34,7 +34,7 @@ valid_ds = div2k_valid.dataset(batch_size=16, random_transform=True, repeat_coun
 # Setting up the generator and the discriminator
 gan_generator = generator()
 gan_discriminator = discriminator()
-gan_generator.load_weights(weights_file(args['weights']))
+gan_generator.load_weights(weights_file(str(args['weights'])))
 
 # Setting up the Trainer
 gan_trainer = SrganTrainer(generator=gan_generator, discriminator=gan_discriminator)
