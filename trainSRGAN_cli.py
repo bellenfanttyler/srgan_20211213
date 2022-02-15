@@ -14,7 +14,7 @@ parser.add_argument('-w','--weights', nargs="?", const="pre_generator.h5", help=
 args = vars(parser.parse_args())
 
 base_steps = 10000
-total_steps = args['steps']
+total_steps = int(args['steps'])
 iteration_count = int(total_steps / base_steps)
 
 # Location of model weights (needed for demo)
