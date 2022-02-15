@@ -13,8 +13,8 @@ parser.add_argument('-s','--steps', help='Number of Training Steps (Multiple of 
 parser.add_argument('-w','--weights', nargs="?", const="pre_generator.h5", help='Weights file to start with')
 args = vars(parser.parse_args())
 
-base_steps = args['steps']
-total_steps = 2000
+base_steps = 10000
+total_steps = args['steps']
 iteration_count = int(total_steps / base_steps)
 
 # Location of model weights (needed for demo)
